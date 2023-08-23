@@ -1,4 +1,4 @@
-# Dotfiles Backup and Assistance Project
+# Dotfiles
 
 I created this project as a backup for my dotfiles and to assist people.
 

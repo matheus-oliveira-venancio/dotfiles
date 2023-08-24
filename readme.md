@@ -99,7 +99,7 @@ To install the dependencies, follow the steps below:
     ```
 - **Configuration:**
     ```shell
-    cp zsh/zshrc ~/.zshrc
+chsh -s $(which zsh)
     ```
 - **Dependencies:**
     ```shell

@@ -90,21 +90,3 @@ To install the dependencies, follow the steps below:
     ```shell
     cp vim/vimrc ~/.vimrc
     ```
-
-### zsh
-#### zsh Configuration
-- **Installation:**
-    ```shell
-    sudo pacman -S zsh
-    ```
-- **Configuration:**
-    ```shell
-chsh -s $(which zsh)
-    ```
-- **Dependencies:**
-    ```shell
-    sudo pacman -S zsh
-    git clone https://github.com/dracula/zsh.git
-    ln -s $DRACULA_THEME/dracula.zsh-theme $OH_MY_ZSH/themes/dracula.zsh-theme
-
-    ```

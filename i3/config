@@ -1,5 +1,4 @@
 # My config for i3wm =)
-
 set $mod Mod4
 
 font pango:monospace 8
@@ -22,27 +21,22 @@ bindsym $mod+Return exec kitty
 # kill focused window
 bindsym $mod+q kill
 
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+J focus left
+bindsym $mod+H focus down
+bindsym $mod+K focus up
+bindsym $mod+L focus right
 
 
 # confusao nao tem sentido isso existir (teclas do nvim)
 
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+J move left
+bindsym $mod+Shift+H move down
+bindsym $mod+Shift+K move up
+bindsym $mod+Shift+L move right
 
 bindsym $mod+F11 fullscreen toggle
 # eu deixo o mod + f11 pq e mais intuitivo 
 # o f11 tb funciona
-
-bindsym $mod+semicolon split toggle
-
-bindsym $mod+Shift+question layout toggle all
-# faz a mesma coisa que esses ai so que so com uma tecla 
 
 bindsym $mod+f floating toggle
 
@@ -110,7 +104,7 @@ bindsym $mod+r mode "resize"
 
 # Things that startup with my system btw i use arch
 
-exec_always feh --bg-fill $HOME/Downloads/hello2.png/
+exec_always feh --bg-fill $HOME/Downloads/archbtw.png/
 exec --no-startup-id polybar example -r
 
 # Important binds 
@@ -121,7 +115,7 @@ bindsym Mod4+e exec Thunar
 bindsym $mod+F7 exec systemctl reboot
 bindsym $mod+f8 exec systemctl poweroff
 
-# Dracula theme for other things
+# Dracula theme on i3 
 
 # class                 border  bground text    indicator child_border
 client.focused          #bd93f9 #6272A4 #F8F8F2 #bd93f9   #50fa7b
@@ -131,7 +125,6 @@ client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
-
 
 # Gaps and border style
 
@@ -160,7 +153,7 @@ smart_gaps inverse_outer
 bindsym $mod+Shift+o exec setxkbmap -layout es
 
 # Portuguese
-bindsym $mod+Shift+p exec setxkbmap -layout pt
+bindsym $mod+Shift+p exec setxkbmap -layout br 
 
 # English 
 bindsym $mod+Shift+i exec setxkbmap -layout us

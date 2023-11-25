@@ -1,7 +1,8 @@
 # My config for i3wm =)
 set $mod Mod4
 
-font pango:monospace 8
+#font pango:monospace 8
+font nerd-fonts-jetbrains-mono-160
 
 exec --no-startup-id dex --autostart --environment i3
 
@@ -15,32 +16,18 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-#add the terminal
 bindsym $mod+Return exec kitty
-
-# kill focused window
 bindsym $mod+q kill
-
-bindsym $mod+J focus left
-bindsym $mod+H focus down
+bindsym $mod+H focus left
+bindsym $mod+J focus down
 bindsym $mod+K focus up
 bindsym $mod+L focus right
-
-
-# confusao nao tem sentido isso existir (teclas do nvim)
-
-bindsym $mod+Shift+J move left
-bindsym $mod+Shift+H move down
+bindsym $mod+Shift+H move left
+bindsym $mod+Shift+J move down
 bindsym $mod+Shift+K move up
 bindsym $mod+Shift+L move right
-
 bindsym $mod+F11 fullscreen toggle
-# eu deixo o mod + f11 pq e mais intuitivo 
-# o f11 tb funciona
-
 bindsym $mod+f floating toggle
-
-bindsym $mod+a focus parent
 
 set $ws1 "1"
 set $ws2 "2"
@@ -63,7 +50,6 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
-
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
@@ -74,6 +60,10 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Sets the workspace 1 to my primary monitor (i use a notebook and this notebook is secound monitor) 
+
+workspace 1 output HDMI-1
 
 bindsym $mod+Shift+c reload
 
@@ -100,37 +90,28 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
-
-# Things that startup with my system btw i use arch
-
-exec_always feh --bg-fill $HOME/Downloads/archbtw.png/
-exec --no-startup-id polybar example -r
-
-# Important binds 
-
-bindsym $mod+d exec rofi -show drun
-bindsym Print exec "scrot ~/Downloads/screenshot_%Y-%m-%d_%H-%M-%S.png"
+exec_always feh --bg-fill $HOME/Downloads/black.jpg/
+bindsym $mod+s exec rofi -show drun
+bindsym Print exec flameshot gui  
 bindsym Mod4+e exec Thunar
 bindsym $mod+F7 exec systemctl reboot
 bindsym $mod+f8 exec systemctl poweroff
-
+bindsym $mod+space exec ~/.config/rofi/scripts/lang.sh
+bindsym $mod+o exec ~/.config/rofi/scripts/ligh.sh
+exec --no-startup-id polybar -r  
+exec --no-startup-id picom -b 
 # Dracula theme on i3 
 
 # class                 border  bground text    indicator child_border
-client.focused          #bd93f9 #6272A4 #F8F8F2 #bd93f9   #50fa7b
-client.focused_inactive #FF79C6 #44475A #F8F8F2 #44475A   #ff79c9
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #bd93fb
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.focused          #cc241d #282828 #F8F8F2 #bd93f9   #50fa7b
 
 client.background       #F8F8F2
 
 # Gaps and border style
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 6 
-new_float pixel 6
+new_window pixel 4 
+new_float pixel 4
 
 #smart_borders on
 
@@ -145,16 +126,10 @@ bindsym $mod+u border none
 bindsym $mod+y border pixel 6 
 smart_gaps inverse_outer
 
+# command to set my capslock key as esc (i use vim and i am a mouseless person, i mean i just use the mouse when i am playing something)
 
-# Change keyboard layout 
-# Languages that i speak/ i am learning 
+exec_always --no-startup-id xmodmap -e "clear Lock" -e "keycode 66 = Escape"
 
-# Spanish
-bindsym $mod+Shift+o exec setxkbmap -layout es
+# testing 
 
-# Portuguese
-bindsym $mod+Shift+p exec setxkbmap -layout br 
-
-# English 
-bindsym $mod+Shift+i exec setxkbmap -layout us
-
+exec_always --no-startup /home/matheuso/xborder/xborders 

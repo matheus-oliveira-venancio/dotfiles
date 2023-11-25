@@ -93,7 +93,7 @@ bindsym $mod+r mode "resize"
 exec_always feh --bg-fill $HOME/Downloads/black.jpg/
 bindsym $mod+s exec rofi -show drun
 bindsym Print exec flameshot gui  
-bindsym Mod4+e exec Thunar
+bindsym Mod4+e exec ~/.config/i3/scripts/ranger.sh
 bindsym $mod+F7 exec systemctl reboot
 bindsym $mod+f8 exec systemctl poweroff
 bindsym $mod+space exec ~/.config/rofi/scripts/lang.sh

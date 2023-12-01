@@ -1,0 +1,47 @@
+/* ==UserStyle==
+@name Github Dracula
+@namespace https://github.com/Dracula
+@homepageURL https://github.com/Dracula/github
+@supportURL https://github.com/Dracula/github/issues
+@version 1.1.5
+@updateURL https://github.com/Dracula/github/raw/master/style.user.css
+@description  🧛🏻‍♂️ Dark theme for Github
+@author Umbreon
+@license MIT
+
+@preprocessor stylus
+@var checkbox purple-logo "Use purple logo" 0
+@var checkbox purple-topbar "Use purple topbar" 0
+@var checkbox colored-status "Use dracula colors on status badges" 0
+@var checkbox black-btn-text "Use black text on colored buttons" 0
+@var checkbox contributor-graph-colors "Use dracula colors for profile contributor graphs" 1
+
+@var checkbox custom-font-enabled "Use custom code font" 0
+@var text custom-font "Custom Font" "FiraCode"
+==/UserStyle== */
+/* Styles 
+Rounded input
+background-color: draculaW-blackSecondary
+
+*/
+@-moz-document domain("github.com") {
+  /* Replace default github colors. Need the attributes here to match the specificity of the default values. */
+  [data-color-mode][data-dark-theme],
+  html[data-color-mode][data-dark-theme],
+  html[data-color-mode][data-dark-theme] body {
+    --color-canvas-default-transparent: rgba(13, 17, 23, 0);
+    --color-page-header-bg: #282a36;
+    --color-marketing-icon-primary: #79c0ff;
+    --color-marketing-icon-secondary: #1f6feb;
+    --color-diff-blob-addition-num-text: #c9d1d9;
+    --color-diff-blob-addition-fg: #c9d1d9;
+    --color-diff-blob-addition-num-bg: rgba(80, 250, 123, 0.3);
+    --color-diff-blob-addition-line-bg: rgba(80, 250, 123, 0.15);
+    --color-diff-blob-addition-word-bg: rgba(80, 250, 123, 0.4);
+    --color-diff-blob-deletion-num-text: #c9d1d9;
+    --color-diff-blob-deletion-fg: #c9d1d9;
+    --color-diff-blob-deletion-num-bg: rgba(255, 85, 85, 0.3);
+    --color-diff-blob-deletion-line-bg: rgba(255, 85, 85, 0.15);
+    --color-diff-blob-deletion-word-bg: rgba(255, 85, 85, 0.4);
+    --color-diff-blob-hunk-num-bg: rgba(56, 139, 253, 0.4);
+    --color-diff-blob-expander-icon: #8b949e;

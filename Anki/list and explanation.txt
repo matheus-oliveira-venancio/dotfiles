@@ -1,0 +1,60 @@
+A file with all my Anki Plugins, i also tell about what's the function of each one 
+
+1 - Review heatmap: 1771074083
+
+Review heatmap adds a headtmap to the home screen, where you can see your current streak, best streak etc 
+
+2 - Vi like movement in the deck brower: 1997961715
+
+Another vi/vim/neovim emulator (there's vi emulators everywhere), this addon allows you to have the vi keybinds 
+Very usefull if you already know how to use vi/vim/neovim or wanna learn 
+
+2.1 - Keybinds:
+
++ Toggle_collapse  
+- Toggle_collapse 
+End Go to the last deck 
+Enter Study 
+Home Go to the first deck 
+Shift+G go to the last deck 
+Shift+J Go to the next deck same 1v1 
+Shift+K Go to the las deck 1v1 
+Down Go to the first deck 
+G Go to the first deck 
+H Go to the parent deck
+J Go to the next deck 
+k Go to previous deck
+O Open the overview 
+Up go to thee previous deck
+
+3 - Vim Answer Shortcuts: 1197299782 
+
+Very similar with vi like movement but this one is used in the decks 
+
+3.1 - Keybinds:
+
+H = Fail 
+J = Hard 
+K = Normal 
+L = Easy 
+Btw you dont need press space or click in show answer, so it saves a lot of your time 
+
+4 - Recolor: 688199788 
+
+This one you can chose and create a custom theme to Anki, i use dracula every btw
+
+5 - AwesomeTTS: 1436550454
+
+Add audio to your flashcards 
+
+6 - Minimal Theme: 867316254
+
+I use it with Recolor it makes the Anki icons more minalist 
+
+7 - AnkiCord: 1828536813
+
+Discord Richpresence you can tweak it a litle bit  you can tweak somethings like i did 
+
+8 - Leaderbords: 41708974 
+
+A competitive way to study xD 

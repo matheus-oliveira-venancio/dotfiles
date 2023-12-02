@@ -1,0 +1,140 @@
+/* ---------https://github.com/tonsky/FiraCode--------- */
+@font-face {
+	font-family: "Fira Code";
+	src: url("../FiraCode-Regular.woff2") format("woff2");
+}
+:focus {
+    outline: none !important;
+}
+.card {
+	font-feature-settings: "ss02","ss04","ss06", "zero";
+	color: black;
+	background-color: white;
+}
+
+/* <s id="g"></s> */
+#g {
+	color: grey;
+	text-decoration: none;
+}
+  
+/* tag to make equations bigger */
+/* <s id="e"></s> */
+#e {
+	font-size: 150%;
+	text-decoration: none;
+}
+
+
+/* --------- divider --------- */
+
+hr {
+	border: none;
+	border-top: 2px solid #CDCDCD;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+
+/* ---------- TABLES ---------- */
+
+.left_table, .centre_table {
+	font-size: 16px;
+	border: none;
+	padding: 2px;
+	border-collapse: collapse;
+}
+.left_table td, .centre_table td {
+	border: 1px solid #b8b8b8;
+	padding: 3px;
+	padding-left: 5px; 
+	padding-right: 5px;
+}
+.left_table td {text-align: left}
+.centre_table td {text-align: center}
+
+
+/* ----------CODE SYNTAX STYLING BELOW---------- */
+
+anki-editable pre {
+	padding: 1em !important;
+	margin: .5em 0 !important;
+	overflow: auto;
+	border-radius: 3px;
+	background: var(--code-bg-color);
+	white-space: pre;
+	text-align: left;
+	word-break: normal;
+	word-wrap: normal;
+	tab-size: 4;
+	hyphens: none;
+	box-sizing: content-box;
+	display: block;
+}
+code {
+	font-family: 'Fira Code', 'menlo', monospace !important;
+	line-height: 1.5;
+	tab-size: 4;
+	white-space: pre;
+	box-sizing: content-box;
+}
+code.shell {
+	font-size: 10px !important;
+}
+:not(pre) > code {
+    padding: .1em;
+    border-radius: .3em;
+    white-space: normal;
+	background: var(--code-bg-color);
+}
+
+
+/* --------------------tooltips-------------------- */
+
+/* Tooltip container */
+.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+	font-size: 75%;
+	visibility: hidden;
+	width: 120px !important; /* was getting overwritten by default anki max-width: 100% */
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+
+	/* Position the tooltip text */
+	position: absolute;
+	z-index: 1;
+	top: 125%;
+	left: 50%;
+	margin-left: -60px;
+
+	/* Fade in tooltip */
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent #555 transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}

@@ -1,0 +1,35 @@
+/* -----------------------------------------------------------------------------
+
+                                    nav bar
+
+----------------------------------------------------------------------------- */
+
+a > svg {
+    opacity: 0.7;
+    height: 16px !important;
+    padding-top: 4px;
+    padding-bottom: 3px;
+}
+a.hitem {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+/* this is to cancel the default css for #sync-spinner so its not invisible 
+when not spinning */
+svg#sync-spinner {
+    visibility: visible !important;
+    margin-bottom: 0px !important;
+    width: 16px !important;
+}
+
+#header {
+    border-bottom: none;
+    padding: 0px;
+}
+tr {
+    /* border-bottom: 1px solid var(--border); */
+    /* padding: 3px 0px 0px 0px !important; */
+    background-color: var(--navbar-bg-color);
+    box-shadow: 0px 2px 4px -2px hsla(0, 0%, 0%, var(--navbar-shadow-opacity));;
+}

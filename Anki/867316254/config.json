@@ -1,0 +1,30 @@
+{
+    "hide 'studied cards today' in homescreen": true,
+    "hide bottom buttons in homescreen": true,
+    "code block button languages": [
+        {"Name": "HTML", "PrismJS ID": "html"},
+        {"Name": "CSS", "PrismJS ID": "css"},
+        {"Name": "SASS", "PrismJS ID": "scss"},
+        {"Name": "Javascript", "PrismJS ID": "js"},
+        {"Name": "Python", "PrismJS ID": "py"},
+        {"Name": "Julia", "PrismJS ID": "julia"},
+        {"Name": "SQL", "PrismJS ID": "sql"},
+        {"Name": "None", "PrismJS ID": "none"}
+    ],
+    "remove editor button: bold": false,
+    "remove editor button: italic": true,
+    "remove editor button: underline": true,
+    "remove editor button: superscript": false,
+    "remove editor button: subscript": false,
+    "remove editor button: text color": false,
+    "remove editor button: highlight": true,
+    "remove editor button: unordered list": true,
+    "remove editor button: ordered list": true,
+    "remove editor button: media file attachments": true,
+    "remove editor button: audio recording": true,
+    "remove editor button: latex equations": false,
+    "add editor button: code block": true,
+    "add editor button: inline code": true,
+    "add editor button: strikethrough": true,
+    "modify editor appearance": true
+}

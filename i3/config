@@ -1,0 +1,153 @@
+# My config for i3wm =)
+set $mod Mod4
+
+# Font settings
+font pango:monospace 8
+
+# Autostart applications
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+
+# Refresh i3status
+set $refresh_i3status killall -SIGUSR1 i3status
+
+# Audio controls
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Keybindings
+bindsym $mod+Return exec kitty
+bindsym $mod+q kill
+bindsym $mod+H focus left
+bindsym $mod+J focus down
+bindsym $mod+K focus up
+bindsym $mod+L focus right
+bindsym $mod+Shift+H move left
+bindsym $mod+Shift+J move down
+bindsym $mod+Shift+K move up
+bindsym $mod+Shift+L move right
+
+# Workspace settings
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Switch to workspaces
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# Move containers to workspaces
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Workspace setup
+workspace 1 output HDMI-1
+
+# Reload and restart
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+# Exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Resize mode
+mode "resize" {
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
+
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Background
+exec_always feh --bg-fill $HOME/Downloads/mint.png/
+
+# Application launchers
+bindsym $mod+s exec rofi -show drun
+bindsym $mod+p exec ~/.config/rofi/scripts/screen.sh
+bindsym $mod+Shift+s exec flameshot gui
+
+# Rofi shit 
+bindsym $mod+space exec ~/.config/rofi/scripts/lang.sh
+bindsym mod+p exec rofi -show power-menu -modi power-menu:~/.config/rofi/scripts/power-menu.sh
+bindsym $mod+w exec rofi -show windowcd
+bindsym $mod+e exec rofi -show filebrowser
+bindsym $mod+c exec rofi -show calc -no-show-match -no-sort
+bindsym $mod+u exec ~/.config/rofi/scripts/wifi-menu.sh
+bindsym $mod+m exec ~/.config/rofi/scripts/Rofi-Beats/rofi-beats-linux
+
+
+# Gaps and border style
+new_window pixel 0 
+new_float pixel 0
+hide_edge_borders none
+
+
+gaps inner 10px
+
+gaps outer 0px
+
+smart_gaps on
+
+# Set capslock as escape
+exec_always --no-startup-id xmodmap -e "clear Lock" -e "keycode 66 = Escape"
+
+# Testing
+exec_always --no-startup-id ~/.config/i3/xborder/xborders.sh
+exec_always --no-startup-id ~/.config/i3/xborder/xborders
+exec_always --no-startup-id -r polybar main --config=~/.config/polybar/config.ini
+exec_always --no-startup-id  polybar main --config=~/.config/polybar/config.ini
+exec_always --nostartup-id ~/.config/i3/autotiling.py
+exec_always --nostartup-id ~/.config/i3/auto.sh
+exec_always --no-startup-id autotiling
+#picom 
+
+exec --no-startup-id picom
+
+exec --no-startup-id autotiling
+
+# Easy and lazy window control 
+bindsym $mod+F11 fullscreen toggle
+bindsym $mod+f floating toggle
+
+#Volume Control
+
+
+bindsym Mod4+comma exec amixer set Master -q 5%- 
+bindsym Mod4+period exec amixer set Master -q 5%+
